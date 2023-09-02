@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import LinkButton from './component/LinkButton';
 
 function App() {
+
+  const data = [
+    {
+      id: 'login_1',
+      label: 'Login One',
+      link: ''
+    },
+    {
+      id: 'login_2',
+      label: 'Login Two',
+      link: ''
+    },
+    {
+      id: 'login_3',
+      label: 'Login Three',
+      link: ''
+    },
+    {
+      id: 'login_4',
+      label: 'Login Four',
+      link: ''
+    },
+    {
+      id: 'login_5',
+      label: 'Login Five',
+      link: ''
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'wrapper'}>
+      <div className="main_container">
+          {
+            data.map((e, index)=>{
+              return (
+                <LinkButton 
+                  key={e.id}
+                  url={e.link}
+                  id={e.id}
+                  label={e.label}
+                />
+              )
+            })
+          }
+      </div>
     </div>
   );
 }
