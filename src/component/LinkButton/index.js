@@ -9,7 +9,7 @@ export default function LinkButton({id, label, url}) {
 
     return (
         <div id={id} key={id} 
-            onClick={retirectCall(url)}
+            onClick={()=>retirectCall(url)}
             className={styles.container}
         >
             <span className={styles.label}>
